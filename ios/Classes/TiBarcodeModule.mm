@@ -183,7 +183,8 @@ static zxing::DecodeHints decodeHints;
     d.readers = [NSSet setWithObject:multiFormatReader];
     d.delegate = self;
     
-    bool retVal = [d decodeImage:image];
+    UIImage *uiImage = [[UIImage alloc] initWithCIImage:image];
+    bool retVal = [d decodeImage:uiImage];
     
     [d release];
     
